@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Demo-Lazyload</title>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+<style>
+	#lazy{width:100%;margin: 0 auto;}
+    img{width: 100%;display:block;background: url(img/loading.gif) no-repeat center; margin: 0 auto}
+     
+</style>
+</head>
+
+<body>
+<div id="lazy">
+	<img data-src="img/banner1.jpg" src="img/pixel.gif"/>
+	<img data-src="img/banner2.jpg" src="img/pixel.gif"/>
+	<img data-src="img/banner3.jpg" src="img/pixel.gif"/>
+	<img data-src="img/banner4.jpg" src="img/pixel.gif"/>
+	<img data-src="img/banner5.jpg" src="img/pixel.gif"/>
+	<img data-src="img/banner1.jpg" src="img/pixel.gif"/>
+	<img data-src="img/banner2.jpg" src="img/pixel.gif"/>
+	<img data-src="img/banner3.jpg" src="img/pixel.gif"/>
+	<img data-src="img/banner4.jpg" src="img/pixel.gif"/>
+	<img data-src="img/banner5.jpg" src="img/pixel.gif"/>
+	<img data-src="img/banner1.jpg" src="img/pixel.gif"/>
+	<img data-src="img/banner2.jpg" src="img/pixel.gif"/>
+	<img data-src="img/banner3.jpg" src="img/pixel.gif"/>
+	<img data-src="img/banner4.jpg" src="img/pixel.gif"/>
+	<img data-src="img/banner5.jpg" src="img/pixel.gif"/>
+	
+</div>
+<script src="js/index.js"></script>
+<script type="text/javascript">
+      var lazyloading = lazy({       
+        id:"lazy",
+        lazyTime:1000,
+        lazyRange:100
+      });
+        </script>
+</body>
+</html>

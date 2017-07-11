@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>弹出框</title>
+	<link rel="stylesheet" href="./dialog.css">
+	<style>
+	body, html {
+		width: 100%;
+		height: 100%;
+	}
+	body {
+		margin: 0;
+		padding: 0;
+		background: linear-gradient(to bottom,red,orange)
+	}
+	button {
+		line-height: 3;
+		border: none;
+		margin-bottom: 10px;
+		background: orange;
+		width: 100%;
+	}
+	</style>
+</head>
+<body>
+	<button id="alert">show alert</button>
+	<button id="confirm">show confirm</button>
+	<button id="load">show load</button>
+	<button id="msg">show msg</button>
+
+
+	<script src="./dialog.js"></script>
+	<script>
+	document.body.addEventListener("click", function (e) {
+		if (e.target.nodeName.toLowerCase() === 'button' && e.target.parentNode === document.body) {
+			if (e.target.id === "load")  {
+				mlayer.alert("将要显示load动画", {
+					yes: function () {
+						mlayer.alert("load 动画将在3秒后关闭！" ,{
+							yes: function () {
+								mlayer[e.target.id]({time: 3000});
+							}
+						});
+					}
+				});
+				return;
+			}
+
+			if (e.target.id === "msg") {
+				mlayer[e.target.id](e.target.innerHTML);
+				return;
+			}
+			mlayer[e.target.id](e.target.innerHTML);
+			
+		}
+	})
+	</script>
+</body>
+</html>
